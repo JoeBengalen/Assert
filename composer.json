@@ -1,10 +1,34 @@
 {
+    "name": "joebengalen/assert",
+    "type": "library",
+    "description": "Assertion library",
+    "keywords": ["assert", "assertion"],
+    "homepage": "https://github.com/JoeBengalen/Assert",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martijn Wennink",
+            "email": "joebengalen@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/JoeBengalen/Assert/issues",
+        "source": "https://github.com/JoeBengalen/Assert"
+    },
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
     "autoload": {
         "psr-4": {
             "JoeBengalen\\Assert\\": "src"
         }
     },
-    "require-dev": {
-        "phpunit/phpunit": "^4.8"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
