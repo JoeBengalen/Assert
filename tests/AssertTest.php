@@ -281,8 +281,8 @@ class AssertTest extends PHPUnit_Framework_TestCase
      */
     public function testCanAssertInstanceOf()
     {
-        Assert::isInstanceOf(new stdClass(), stdClass::class);
-        Assert::isInstanceOf($this, PHPUnit_Framework_TestCase::class);
+        Assert::isInstanceOf(new stdClass(), 'stdClass');
+        Assert::isInstanceOf($this, 'PHPUnit_Framework_TestCase');
     }
 
     /**
@@ -293,7 +293,7 @@ class AssertTest extends PHPUnit_Framework_TestCase
      */
     public function testAssertingInvalidInstanceOfThrowsException()
     {
-        Assert::isInstanceOf(null, stdClass::class);
+        Assert::isInstanceOf(null, 'stdClass');
     }
 
     /**
@@ -304,7 +304,7 @@ class AssertTest extends PHPUnit_Framework_TestCase
      */
     public function testAssertingInvalidInstanceOfCanThrowExceptionWithCustomMessage()
     {
-        Assert::isInstanceOf(null, stdClass::class, 'got: %s expected: %s');
+        Assert::isInstanceOf(null, 'stdClass', 'got: %s expected: %s');
     }
 
     /**
@@ -705,9 +705,9 @@ class AssertTest extends PHPUnit_Framework_TestCase
      */
     public function testCanAssertNullOrInstanceOf()
     {
-        Assert::isNullOrInstanceOf(null, stdClass::class);
-        Assert::isNullOrInstanceOf(new stdClass(), stdClass::class);
-        Assert::isNullOrInstanceOf($this, PHPUnit_Framework_TestCase::class);
+        Assert::isNullOrInstanceOf(null, 'stdClass');
+        Assert::isNullOrInstanceOf(new stdClass(), 'stdClass');
+        Assert::isNullOrInstanceOf($this, 'PHPUnit_Framework_TestCase');
     }
 
     /**
@@ -718,7 +718,7 @@ class AssertTest extends PHPUnit_Framework_TestCase
      */
     public function testAssertingInvalidNullOrInstanceOfThrowsException()
     {
-        Assert::isNullOrInstanceOf(1, stdClass::class);
+        Assert::isNullOrInstanceOf(1, 'stdClass');
     }
 
     /**
@@ -729,7 +729,7 @@ class AssertTest extends PHPUnit_Framework_TestCase
      */
     public function testAssertingInvalidNullOrInstanceOfCanThrowExceptionWithCustomMessage()
     {
-        Assert::isNullOrInstanceOf(1, stdClass::class, 'got: %s expected: %s');
+        Assert::isNullOrInstanceOf(1, 'stdClass', 'got: %s expected: %s');
     }
 
     /**
