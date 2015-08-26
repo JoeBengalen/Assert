@@ -54,7 +54,7 @@ class Helper
         }
 
         if (is_string($value)) {
-            return '"'.$value.'"';
+            return '"' . $value . '"';
         }
 
         return (string) $value;

@@ -866,7 +866,7 @@ class AssertTest extends PHPUnit_Framework_TestCase
             'key1' => 'val1',
             'key2' => 'val2',
         ];
-        
+
         Assert::keyExists($value, 'key1');
     }
 
