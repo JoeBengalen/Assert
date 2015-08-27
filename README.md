@@ -1,8 +1,8 @@
 # Assert
 
 [![Build Status](https://travis-ci.org/JoeBengalen/Assert.svg?branch=master)](https://travis-ci.org/JoeBengalen/Assert)
-[![Coverage Status](https://coveralls.io/repos/JoeBengalen/Assert/badge.svg?branch=master&service=github)](https://coveralls.io/github/JoeBengalen/Assert?branch=master)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
+[![Coverage Status](https://coveralls.io/repos/JoeBengalen/Assert/badge.svg?branch=master)](https://coveralls.io/github/JoeBengalen/Assert?branch=master)
+[![License](https://poser.pugx.org/joebengalen/assert/license)](LICENSE.md)
 
 As we all know when using an existing library we wish some things would be a little different. To make sure I can use assertions exacly how I feel is best I created my own implementation.
 
