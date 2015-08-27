@@ -1,7 +1,20 @@
 <?php
 
+/**
+ * JoeBengalen Assert library.
+ *
+ * @author    Martijn Wennink <joebengalen@gmail.com>
+ * @copyright Copyright (c) 2015 Martijn Wennink
+ * @link      https://github.com/JoeBengalen/Assert
+ * @license   MIT
+ */
+
 namespace JoeBengalen\Assert;
 
+/**
+ * Assertion helper class that converts variable types and values into usefull
+ * strings.
+ */
 class Helper
 {
     /**
