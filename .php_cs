@@ -43,7 +43,7 @@ return Symfony\CS\Config\Config::create()
         'namespace_no_leading_whitespace', // symfony
         'new_with_braces', // symfony
         'no_blank_lines_after_class_opening', // symfony
-        'no_empty_lines_after_phpdocs', // symfony
+//      'no_empty_lines_after_phpdocs', // symfony // -> also removed line between filedoc and namespace!
         'object_operator', // symfony
         'operators_spaces', // symfony
         'phpdoc_indent', // symfony
