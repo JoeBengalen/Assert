@@ -12,7 +12,7 @@
 namespace JoeBengalen\Assert;
 
 /**
- * Assertion helper class that converts variable types and values into usefull
+ * Assertion helper class that converts variable types and values into useful
  * strings.
  */
 class Helper
