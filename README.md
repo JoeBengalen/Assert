@@ -24,3 +24,8 @@ Assert::isInteger($variable);
 
 // Or with a custom exception message on fail
 Assert::isInteger($variable, 'Custom message: got %s but expected boolean value.');
+```
+
+## Testing
+
+This project uses [PHPUnit](https://phpunit.de) for tests. PHPUnit is not included as requirement, so to run the tests manually it has to be installed either globally or manually.
