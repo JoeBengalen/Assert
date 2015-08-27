@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/JoeBengalen/Assert.svg?branch=master)](https://travis-ci.org/JoeBengalen/Assert)
 [![Coverage Status](https://coveralls.io/repos/JoeBengalen/Assert/badge.svg?branch=master)](https://coveralls.io/github/JoeBengalen/Assert?branch=master)
 [![License](https://poser.pugx.org/joebengalen/assert/license)](LICENSE.md)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b6f8567d-7a76-47b0-ac36-2908285d0516/mini.png)](https://insight.sensiolabs.com/projects/b6f8567d-7a76-47b0-ac36-2908285d0516)
 
 As we all know when using an existing library we wish some things would be a little different. To make sure I can use assertions exacly how I feel is best I created my own implementation.
 
