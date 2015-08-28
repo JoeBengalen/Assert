@@ -22,10 +22,5 @@
         "psr-4": {
             "JoeBengalen\\Assert\\": "src"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        }
     }
 }
