@@ -8,7 +8,7 @@
 
 As we all know when using an existing library we wish some things would be a little different. To make sure I can use assertions exactly how I feel is best, I created my own implementation.
 
-The assert methods are meant to be used to check whether incoming arguments are what you expect them to be. If the variable does nto meet the assertion an `InvalidArgumentException` is thrown.
+The assert methods are meant to be used to check whether incoming arguments are what you expect them to be. If the variable does not meet the assertion an `InvalidArgumentException` is thrown.
 
 I needed all available assertions to be actual methods instead of virtual ones in the class PHPDoc, because virtual ones do not work properly with static methods in netbeans.
 
@@ -78,4 +78,4 @@ Please see the [CHANGELOG](CHANGELOG.md) for more information what has changed r
 
 ## Testing
 
-This project uses [PHPUnit](https://phpunit.de) for testing. PHPUnit is not included as requirement, so to run the tests phpunit has to be manually installed either globally or manually.
+This project uses [PHPUnit](https://phpunit.de) for testing. PHPUnit is not included as requirement, so to run the tests phpunit has to be manually installed. The reason for this is that I prefer having phpunit installed globally.
