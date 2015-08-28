@@ -1,7 +1,7 @@
 # Assert
 
-[![Build Status](https://travis-ci.org/JoeBengalen/Assert.svg?branch=1.x)](https://travis-ci.org/JoeBengalen/Assert)
-[![Coverage Status](https://coveralls.io/repos/JoeBengalen/Assert/badge.svg?branch=1.x)](https://coveralls.io/github/JoeBengalen/Assert?branch=1.x)
+[![Build Status](https://travis-ci.org/JoeBengalen/Assert.svg?branch=1.0)](https://travis-ci.org/JoeBengalen/Assert)
+[![Coverage Status](https://coveralls.io/repos/JoeBengalen/Assert/badge.svg?branch=1.0)](https://coveralls.io/github/JoeBengalen/Assert?branch=1.0)
 [![Code Climate](https://codeclimate.com/github/JoeBengalen/Assert/badges/gpa.svg)](https://codeclimate.com/github/JoeBengalen/Assert)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/563b0f45-b895-486b-b504-2658b1e3672c/mini.png)](https://insight.sensiolabs.com/projects/563b0f45-b895-486b-b504-2658b1e3672c)
 [![License](https://poser.pugx.org/joebengalen/assert/license)](LICENSE.md)
