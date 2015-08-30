@@ -11,6 +11,7 @@
 
 namespace JoeBengalen\Assert;
 
+use Exception;
 use InvalidArgumentException;
 use Traversable;
 
@@ -20,6 +21,11 @@ use Traversable;
 class Assert
 {
     /**
+     * @var string Exception to throw. 
+     */
+    public static $exception = 'InvalidArgumentException';
+
+    /**
      * Assert that the value is boolean.
      *
      * @param mixed  $value
@@ -27,12 +33,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isBoolean($value, $message = null)
     {
         if (!is_bool($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected boolean, but got %s',
                 Helper::typeToString($value)
             ));
@@ -47,12 +53,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isInteger($value, $message = null)
     {
         if (!is_int($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected integer, but got %s',
                 Helper::typeToString($value)
             ));
@@ -67,12 +73,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNumeric($value, $message = null)
     {
         if (!is_numeric($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected numeric, but got %s',
                 Helper::typeToString($value)
             ));
@@ -87,12 +93,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isFloat($value, $message = null)
     {
         if (!is_float($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected float, but got %s',
                 Helper::typeToString($value)
             ));
@@ -107,12 +113,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isString($value, $message = null)
     {
         if (!is_string($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected string, but got %s',
                 Helper::typeToString($value)
             ));
@@ -127,12 +133,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isScalar($value, $message = null)
     {
         if (!is_scalar($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected scalar, but got %s',
                 Helper::typeToString($value)
             ));
@@ -147,12 +153,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isArray($value, $message = null)
     {
         if (!is_array($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected array, but got %s',
                 Helper::typeToString($value)
             ));
@@ -167,12 +173,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isCallable($value, $message = null)
     {
         if (!is_callable($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected callable, but got %s',
                 Helper::typeToString($value)
             ));
@@ -188,12 +194,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isInstanceOf($value, $class, $message = null)
     {
         if (!$value instanceof $class) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected instance of %2$s, but got %s',
                 Helper::typeToString($value),
                 $class
@@ -209,12 +215,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isTraversable($value, $message = null)
     {
         if (!is_array($value) && !$value instanceof Traversable) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected traversable, but got %s',
                 Helper::typeToString($value)
             ));
@@ -229,12 +235,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isResource($value, $message = null)
     {
         if (!is_resource($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected resource, but got %s',
                 Helper::typeToString($value)
             ));
@@ -249,12 +255,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isDirectory($value, $message = null)
     {
         if (!is_string($value) || !is_dir($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected directory, but got %s',
                 Helper::valueToString($value)
             ));
@@ -269,12 +275,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isFile($value, $message = null)
     {
         if (!is_string($value) || !is_file($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected file, but got %s',
                 Helper::valueToString($value)
             ));
@@ -289,12 +295,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrBoolean($value, $message = null)
     {
         if (!is_null($value) && !is_bool($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or boolean, but got %s',
                 Helper::typeToString($value)
             ));
@@ -309,12 +315,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrInteger($value, $message = null)
     {
         if (!is_null($value) && !is_int($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or integer, but got %s',
                 Helper::typeToString($value)
             ));
@@ -329,12 +335,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrNumeric($value, $message = null)
     {
         if (!is_null($value) && !is_numeric($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or numeric, but got %s',
                 Helper::typeToString($value)
             ));
@@ -349,12 +355,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrFloat($value, $message = null)
     {
         if (!is_null($value) && !is_float($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or float, but got %s',
                 Helper::typeToString($value)
             ));
@@ -369,12 +375,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrString($value, $message = null)
     {
         if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or string, but got %s',
                 Helper::typeToString($value)
             ));
@@ -389,12 +395,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrScalar($value, $message = null)
     {
         if (!is_null($value) && !is_scalar($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or scalar, but got %s',
                 Helper::typeToString($value)
             ));
@@ -409,12 +415,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrArray($value, $message = null)
     {
         if (!is_null($value) && !is_array($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or array, but got %s',
                 Helper::typeToString($value)
             ));
@@ -429,12 +435,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrCallable($value, $message = null)
     {
         if (!is_null($value) && !is_callable($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or callable, but got %s',
                 Helper::typeToString($value)
             ));
@@ -450,12 +456,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrInstanceOf($value, $class, $message = null)
     {
         if (!is_null($value) && !$value instanceof $class) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or instance of %2$s, but got %s',
                 Helper::typeToString($value),
                 $class
@@ -471,12 +477,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrTraversable($value, $message = null)
     {
         if (!is_null($value) && !is_array($value) && !$value instanceof Traversable) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or traversable, but got %s',
                 Helper::typeToString($value)
             ));
@@ -491,12 +497,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrResource($value, $message = null)
     {
         if (!is_null($value) && !is_resource($value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or resource, but got %s',
                 Helper::typeToString($value)
             ));
@@ -511,12 +517,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrDirectory($value, $message = null)
     {
         if (!is_null($value) && !(is_string($value) && is_dir($value))) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or directory, but got %s',
                 Helper::valueToString($value)
             ));
@@ -531,12 +537,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function isNullOrFile($value, $message = null)
     {
         if (!is_null($value) && !(is_string($value) && is_file($value))) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected null or file, but got %s',
                 Helper::valueToString($value)
             ));
@@ -552,12 +558,12 @@ class Assert
      *
      * @return void
      *
-     * @throws InvalidArgumentException
+     * @throws InvalidArgumentException|Exception
      */
     public static function keyExists($value, $key, $message = null)
     {
         if (!array_key_exists($key, $value)) {
-            throw new InvalidArgumentException(sprintf(
+            throw new self::$exception(sprintf(
                 $message ?: 'Expected array key %2$s to exist',
                 Helper::typeToString($value),
                 Helper::valueToString($key)
