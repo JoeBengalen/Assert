@@ -4,7 +4,7 @@
  * JoeBengalen Assert library.
  *
  * @author    Martijn Wennink <joebengalen@gmail.com>
- * @copyright Copyright (c) 2015 Martijn Wennink
+ * @copyright Copyright (c) 2015-2016 Martijn Wennink
  * @link      https://github.com/JoeBengalen/Assert
  * @license   MIT
  */
