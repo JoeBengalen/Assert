@@ -905,4 +905,34 @@ class AssertTest extends PHPUnit_Framework_TestCase
     {
         Assert::keyExists(new stdClass(), null, 'got: %s expected to have key: %s');
     }
+
+    /**
+     * @covers ::inArray
+     */
+    public function testCanAssertInArray()
+    {
+        Assert::inArray('bar', ['foo', 'bar', 'baz']);
+    }
+
+    /**
+     * @covers ::inArray
+     *
+     * @expectedException        InvalidArgumentException
+     * @expectedExceptionMessage Value "qux" is not in array
+     */
+    public function testAssertingInvalidInArrayThrowsException()
+    {
+        Assert::inArray('qux', ['foo', 'bar', 'baz']);
+    }
+
+    /**
+     * @covers ::inArray
+     *
+     * @expectedException        InvalidArgumentException
+     * @expectedExceptionMessage Invalid value: 3
+     */
+    public function testAssertingInvalidInArrayThrowsExceptionWithCustomMessage()
+    {
+        Assert::inArray(3, ['foo', 'bar', 'baz'], 'Invalid value: %s');
+    }
 }

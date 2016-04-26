@@ -564,4 +564,25 @@ class Assert
             ));
         }
     }
+
+    /**
+     * Assert that value is in array.
+     *
+     * @param mixed  $value
+     * @param array  $array
+     * @param string $message
+     *
+     * @return void
+     *
+     * @throws InvalidArgumentException
+     */
+    public static function inArray($value, array $array, $message = null)
+    {
+        if (!in_array($value, $array)) {
+            throw new InvalidArgumentException(sprintf(
+                $message ?: 'Value %s is not in array',
+                Helper::valueToString($value)
+            ));
+        }
+    }
 }
